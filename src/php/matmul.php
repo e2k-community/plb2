@@ -1,4 +1,5 @@
 <?php
+ini_set('memory_limit', '-1'); // -1 означает без ограничений, или укажите конкретное значение, например, '512M' для 512 МБ
 function matgen(int $n) {
 	$a = array_fill(0, $n, array_fill(0, $n, 0));
 	$tmp = 1.0 / $n / $n;

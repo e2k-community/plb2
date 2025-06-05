@@ -273,6 +273,22 @@ const (
 	IntervalLengthBits = 14
 )
 
+// max возвращает максимальное значение двух значений типа RangeType
+func max(a, b RangeType) RangeType {
+    if a > b {
+        return a
+    }
+    return b
+}
+
+// min возвращает минимальное значение двух значений типа RangeType
+func min(a, b RangeType) RangeType {
+    if a < b {
+        return a
+    }
+    return b
+}
+
 func main() {
 	var rng = &SplitMix32{state: 11} // Fixed seed, to get deterministic (always the same) result.
 	tree := MakeImplicitIntervalTree(GenerateIntervals(NumIntervals, rng, IntervalStartBits, IntervalLengthBits))
